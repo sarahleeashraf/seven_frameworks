@@ -1,0 +1,35 @@
+source 'https://rubygems.org'
+
+gem "sinatra"
+gem "sqlite3"
+gem "data_mapper"
+gem "dm-sqlite-adapter"
+gem "dm-serializer"
+gem "sinatra-contrib"
+
+# for sinatra-contrib
+gem "erubis"
+gem "haml"
+gem "sass"
+gem "less"
+gem 'therubyracer'
+gem 'liquid'
+gem 'redcarpet'
+gem 'RedCloth'
+gem 'asciidoctor'
+gem 'radius'
+gem 'coffee-script'
+gem 'nokogiri'
+gem 'slim'
+gem 'mab'
+gem 'markdown'
+gem 'rdoc'
+gem 'creole'
+gem 'bluecloth'
+gem 'contest'
+gem 'kramdown'
+gem 'markaby'
+gem 'maruku'
+gem 'rdiscount'
+gem 'wikicloth'
+gem 'yajl-ruby'
