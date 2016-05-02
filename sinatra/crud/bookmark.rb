@@ -7,8 +7,8 @@ class Bookmark
   property :url, String, required: true, format: :url
   property :title, String, required: true
 
-  has n :taggings, constraint: :destroy
-  has n :tags, through: :taggings, order: [:label.asc]
+  has n, :taggings, constraint: :destroy
+  has n, :tags, through: :taggings, order: [:label.asc]
 
   def tagList
     tags.collect do |tag|

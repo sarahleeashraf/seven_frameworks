@@ -4,9 +4,13 @@ require "data_mapper"
 require "dm-serializer"
 
 require_relative "bookmark"
+require_relative "tag"
+require_relative "tagging"
 
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/bookmarks.db")
 DataMapper.finalize.auto_upgrade!
+
+with_tagList = {methods: [:tagList]}
 
 def get_all_bookmarks
   Bookmark.all(order: :title)
@@ -24,9 +28,14 @@ helpers do
   end
 
   def add_tags(bookmark)
-    labels = (params["tagsAsString"] || "").split(", ").map(&:strip)
+
+    p params
+
+    labels = (params["tagsAsString"] || "").split(",").map(&:strip)
 
     existing_labels = []
+
+    p labels
 
     bookmark.taggings.each do |tagging|
       if labels.include? tagging.tag.label
@@ -37,6 +46,8 @@ helpers do
     end
 
     (labels - existing_labels).each do |label|
+      p label
+
       tag = {label: label}
       existing = Tag.first tag
       if !existing
@@ -44,6 +55,7 @@ helpers do
       end
 
       Tagging.create tag: existing, bookmark: bookmark
+    end
   end
 end
 
@@ -52,11 +64,17 @@ get "/" do
   respond_with :bookmark_list, @bookmarks
 end
 
-get %r{/bookmarks/|d+} do
-  id = params[:id]
-  bookmark = Bookmark.get(id)
+before %r{/bookmarks/([0-9]+)} do |id|
+  @bookmark = Bookmark.get(id)
+
+  if !@bookmark
+    halt 404, "Bookmark #{id} not found"
+  end
+end
+
+get %r{/bookmarks/([0-9]+)}  do |id|
   content_type :json
-  bookmark.to_json with_tagList
+  @bookmark.to_json with_tagList
 end
 
 get "/bookmarks/*" do 
@@ -88,24 +106,21 @@ post "/bookmarks" do
   end
 end
 
-get %r{/bookmarks/|d+} do
-  id = params[:id]
-  bookmark = Bookmarks.get(id)
+put %r{/bookmarks/([0-9]+)}  do |id|
 
-  if bookmark
+  if @bookmark
     input = params.slice "url", "title"
-    if bookmark.update input
+    if @bookmark.update input
       204
     else
       400 #Bad request
     end
   else
     [404, "bookmark #{id} not found"]
+  end
 end
 
-get %r{/bookmarks/|d+} do
-  id = params[:id]
-  bookmark = bookmark.get(id)
-  bookmark.destroy
+delete %r{/bookmarks/([0-9]+)}  do
+  @bookmark.destroy
   200 # OK
 end

@@ -6,5 +6,9 @@
   Title:
   <input type="text" name="title" value='<%= @bookmark && @bookmark.title %>'>
 </label>
+<label>
+  Tags:
+  <input type="text" name="tagsAsString" value='<%= @bookmark && @bookmark.tagList %>' />
+</label>
 <input type="submit" name="save" value="Save">
 <a href="/">Cancel</a>
