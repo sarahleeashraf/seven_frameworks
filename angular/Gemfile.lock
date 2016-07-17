@@ -1,0 +1,205 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    RedCloth (4.3.2)
+    activesupport (5.0.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    addressable (2.4.0)
+    asciidoctor (1.5.4)
+    backports (3.6.8)
+    bcrypt (3.1.11)
+    bcrypt-ruby (3.1.5)
+      bcrypt (>= 3.1.3)
+    bluecloth (2.2.0)
+    builder (3.2.2)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.10.0)
+    commonjs (0.2.7)
+    concurrent-ruby (1.0.2)
+    contest (0.1.3)
+    creole (0.5.0)
+    data_mapper (1.2.0)
+      dm-aggregates (~> 1.2.0)
+      dm-constraints (~> 1.2.0)
+      dm-core (~> 1.2.0)
+      dm-migrations (~> 1.2.0)
+      dm-serializer (~> 1.2.0)
+      dm-timestamps (~> 1.2.0)
+      dm-transactions (~> 1.2.0)
+      dm-types (~> 1.2.0)
+      dm-validations (~> 1.2.0)
+    data_objects (0.10.17)
+      addressable (~> 2.1)
+    dm-aggregates (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-constraints (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-core (1.2.1)
+      addressable (~> 2.3)
+    dm-do-adapter (1.2.0)
+      data_objects (~> 0.10.6)
+      dm-core (~> 1.2.0)
+    dm-migrations (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-serializer (1.2.2)
+      dm-core (~> 1.2.0)
+      fastercsv (~> 1.5)
+      json (~> 1.6)
+      json_pure (~> 1.6)
+      multi_json (~> 1.0)
+    dm-sqlite-adapter (1.2.0)
+      dm-do-adapter (~> 1.2.0)
+      do_sqlite3 (~> 0.10.6)
+    dm-timestamps (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-transactions (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-types (1.2.2)
+      bcrypt-ruby (~> 3.0)
+      dm-core (~> 1.2.0)
+      fastercsv (~> 1.5)
+      json (~> 1.6)
+      multi_json (~> 1.0)
+      stringex (~> 1.4)
+      uuidtools (~> 2.1)
+    dm-validations (1.2.0)
+      dm-core (~> 1.2.0)
+    do_sqlite3 (0.10.17)
+      data_objects (= 0.10.17)
+    erubis (2.7.0)
+    execjs (2.7.0)
+    expression_parser (0.9.0)
+    fastercsv (1.5.5)
+    haml (4.0.7)
+      tilt
+    htmlentities (4.3.4)
+    i18n (0.7.0)
+    json (1.8.3)
+    json_pure (1.8.3)
+    kramdown (1.11.1)
+    less (2.6.0)
+      commonjs (~> 0.2.7)
+    libv8 (3.16.14.15)
+    liquid (3.0.6)
+    logutils (0.6.1)
+    mab (0.0.3)
+    markaby (0.8.0)
+      builder
+    markdown (1.2.0)
+      kramdown (>= 1.5.0)
+      props (>= 1.1.2)
+      textutils (>= 0.10.0)
+    maruku (0.7.2)
+    mini_portile2 (2.1.0)
+    minitest (5.9.0)
+    multi_json (1.12.1)
+    mustache (0.99.8)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
+    pkg-config (1.1.7)
+    props (1.1.2)
+    rack (1.6.4)
+    rack-protection (1.5.3)
+      rack
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    radius (0.7.4)
+    rdiscount (2.2.0.1)
+    rdoc (4.2.2)
+      json (~> 1.4)
+    redcarpet (3.3.4)
+    ref (2.0.0)
+    rubyzip (1.2.0)
+    sass (3.4.22)
+    sinatra (1.4.7)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    sinatra-contrib (1.4.7)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (>= 1.3, < 3)
+    sinatra-mustache (0.3.2)
+      mustache (~> 0.99, >= 0.99.6)
+      sinatra (~> 1.4, ~> 1.3)
+      tilt (>= 1.3, <= 2.0)
+    slim (3.0.7)
+      temple (~> 0.7.6)
+      tilt (>= 1.3.3, < 2.1)
+    sqlite3 (1.3.11)
+    stringex (1.5.1)
+    temple (0.7.7)
+    textutils (1.4.0)
+      activesupport
+      logutils (>= 0.6.1)
+      props (>= 1.1.2)
+      rubyzip (>= 1.0.0)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
+    thread_safe (0.3.5)
+    tilt (2.0.0)
+    twitter-text (1.14.0)
+      unf (~> 0.1.0)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
+    uuidtools (2.1.5)
+    wikicloth (0.8.3)
+      builder
+      expression_parser
+      htmlentities
+      nokogiri
+      twitter-text
+    yajl-ruby (1.2.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  RedCloth
+  asciidoctor
+  bluecloth
+  coffee-script
+  contest
+  creole
+  data_mapper
+  dm-serializer
+  dm-sqlite-adapter
+  erubis
+  haml
+  kramdown
+  less
+  liquid
+  mab
+  markaby
+  markdown
+  maruku
+  nokogiri
+  radius
+  rdiscount
+  rdoc
+  redcarpet
+  sass
+  sinatra
+  sinatra-contrib
+  sinatra-mustache
+  slim
+  sqlite3
+  therubyracer
+  wikicloth
+  yajl-ruby
+
+BUNDLED WITH
+   1.12.5
